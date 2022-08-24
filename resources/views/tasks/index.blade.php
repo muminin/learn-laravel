@@ -13,7 +13,10 @@
   <div>
     <ul style="list-style-type: none;">
       @foreach ($tasks as $key => $val)
-        <li>{{ $key + 1 }}. {{ $val->list }}</li>
+        <li>
+          {{ $key + 1 }}. {{ $val->list }} - <a href="/tasks/{{ $val->id }}"
+            style="color: aquamarine;">Edit</a>
+        </li>
       @endforeach
     </ul>
   </div>
