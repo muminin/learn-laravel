@@ -14,8 +14,14 @@
     <ul style="list-style-type: none;">
       @foreach ($tasks as $key => $val)
         <li>
-          {{ $key + 1 }}. {{ $val->list }} - <a href="/tasks/{{ $val->id }}"
-            style="color: aquamarine;">Edit</a>
+          {{ $key + 1 }}. {{ $val->list }} -
+          <a href="/tasks/{{ $val->id }}" style="color: yellow;">Edit</a> -
+          <form action="/tasks/{{ $val->id }}" method="post" style="display: inline-block;">
+            @method('delete')
+            @csrf
+
+            <button style="submit">Delete</button>
+          </form>
         </li>
       @endforeach
     </ul>
