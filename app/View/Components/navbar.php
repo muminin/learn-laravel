@@ -28,6 +28,7 @@ class Navbar extends Component
       'About' => '/about',
       'Contact' => '/contact',
       'Profile' => '/profile',
+      'Task' => '/tasks',
     ];
 
     return view('layouts.navbar', compact('navigations'));

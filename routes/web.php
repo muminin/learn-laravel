@@ -14,3 +14,4 @@ Route::post('contact', [ContactController::class, 'store']);
 Route::get('profile/{name}', ProfileInformationController::class);
 
 Route::get('tasks', [TaskController::class, 'index']);
+Route::post('tasks', [TaskController::class, 'store']);
