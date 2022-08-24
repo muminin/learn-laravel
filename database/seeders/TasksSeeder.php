@@ -5,18 +5,15 @@ namespace Database\Seeders;
 use App\Models\Task;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class TasksSeeder extends Seeder
 {
   /**
-   * Seed the application's database.
+   * Run the database seeds.
    *
    * @return void
    */
   public function run()
   {
-    $this->call([
-      UsersSeeder::class,
-      TasksSeeder::class,
-    ]);
+    Task::factory(10)->create();
   }
 }
