@@ -1,14 +1,10 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'home');
-Route::view('contact', 'contact');
-Route::view('about', 'about');
+Route::get('/', HomeController::class);
 
-Route::get('profile/{username}', function ($username) {
-  return view('profile', [
-    'name' => $username,
-  ]);
-});
+Route::get('contact', [ContactController::class, 'create']);
+Route::post('contact', [ContactController::class, 'store']);
