@@ -1,12 +1,14 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
-// Route::get('/', function () {
-//   return view('home');
-// });
 
 Route::view('/', 'home');
 Route::view('contact', 'contact');
 Route::view('about', 'about');
-Route::view('profile', 'profile');
+
+Route::get('profile/{username}', function ($username) {
+  return view('profile', [
+    'name' => $username,
+  ]);
+});
