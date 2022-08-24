@@ -6,7 +6,7 @@ use App\Http\Controllers\ProfileInformationController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
-// Temp for 24
+// Temp for 24 // aye
 
 Route::get('/', HomeController::class); // This structure for __invoke or invokable class
 
