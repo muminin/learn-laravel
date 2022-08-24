@@ -1,3 +1,11 @@
 <x-app-layout title="About">
-  Home Page
+  @slot('styles')
+    <style>
+      body {
+        background: indianred;
+      }
+    </style>
+  @endslot
+
+  About Page
 </x-app-layout>

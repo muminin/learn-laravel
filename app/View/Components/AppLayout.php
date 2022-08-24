@@ -6,7 +6,7 @@ use Illuminate\View\Component;
 
 class AppLayout extends Component
 {
-  public $title;
+  public $title, $styles = null;
 
   /**
    * Create a new component instance.

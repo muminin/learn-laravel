@@ -8,6 +8,7 @@
   <title>{{ $title }} | Niman</title>
 
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+  {{ $styles }}
 </head>
 
 <body>
