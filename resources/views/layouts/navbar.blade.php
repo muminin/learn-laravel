@@ -12,7 +12,12 @@
             <a class="nav-link" href="{{ $val }}">{{ $key }}</a>
           </li>
         @endforeach
+      </ul>
 
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a href="{{ route('register') }}" class="nav-link">Register</a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
@@ -27,10 +32,6 @@
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-
       </ul>
     </div>
   </div>
