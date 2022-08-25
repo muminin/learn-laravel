@@ -5,7 +5,7 @@
         <div class="card">
           <div class="card-header">Create Task</div>
           <div class="card-body">
-            <form action="/tasks" method="post" class="d-flex">
+            <form action="{{ route('tasks.store') }}" method="post" class="d-flex">
               @csrf
               <input type="text" class="form-control me-2" name="list" placeholder="Task Name">
 
@@ -22,8 +22,8 @@
           {{ $key + 1 }}. {{ $val->list }}
 
           <div class="d-flex">
-            <a class="btn btn-sm btn-warning me-2" href="/tasks/{{ $val->id }}">Edit</a>
-            <form action="/tasks/{{ $val->id }}" method="post">
+            <a class="btn btn-sm btn-warning me-2" href="{{ route('tasks.edit', $val->id) }}">Edit</a>
+            <form action="{{ route('tasks.destroy', $val->id) }}" method="post">
               @method('delete')
               @csrf
 
