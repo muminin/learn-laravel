@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\TaskRequest;
 use App\Models\Task;
-use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
   public function index()
   {
     return view('tasks.index', [
+      'task' => new Task,
       'tasks' => Task::latest()->get(),
+      'submit' => "Create",
     ]);
   }
 
@@ -26,6 +27,7 @@ class TaskController extends Controller
   {
     return view('tasks.edit', [
       'task' => $task,
+      'submit' => "Update",
     ]);
   }
 
