@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -16,22 +17,24 @@ class UsersSeeder extends Seeder
    */
   public function run()
   {
-    collect([
-      [
-        'name' => 'Niman Wulandari',
-        'email' => 'niman@mail.com',
-        'password' => Hash::make('password'),
-        'email_verified_at' => Carbon::now(),
-        'created_at' => now(),
-      ], [
-        'name' => 'Namin Wika',
-        'email' => 'namin@mail.com',
-        'password' => Hash::make('password'),
-        'email_verified_at' => Carbon::now(),
-        'created_at' => now(),
-      ],
-    ])->each(function ($user) {
-      DB::table('users')->insert($user);
-    });
+    User::factory()->count(10)->create();
+
+    // collect([
+    //   [
+    //     'name' => 'Niman Wulandari',
+    //     'email' => 'niman@mail.com',
+    //     'password' => Hash::make('password'),
+    //     'email_verified_at' => Carbon::now(),
+    //     'created_at' => now(),
+    //   ], [
+    //     'name' => 'Namin Wika',
+    //     'email' => 'namin@mail.com',
+    //     'password' => Hash::make('password'),
+    //     'email_verified_at' => Carbon::now(),
+    //     'created_at' => now(),
+    //   ],
+    // ])->each(function ($user) {
+    //   DB::table('users')->insert($user);
+    // });
   }
 }

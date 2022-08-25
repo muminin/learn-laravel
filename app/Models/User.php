@@ -41,4 +41,10 @@ class User extends Authenticatable
   protected $casts = [
     'email_verified_at' => 'datetime',
   ];
+
+  // Custom Column Identifier for Model Binding
+  // public function getRouteKeyName()
+  // {
+  //   return 'username';
+  // }
 }
