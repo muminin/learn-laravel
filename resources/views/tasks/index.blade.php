@@ -2,17 +2,9 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">Create Task</div>
-          <div class="card-body">
-            <form action="{{ route('tasks.store') }}" method="post" class="d-flex">
-              @csrf
-              <input type="text" class="form-control me-2" name="list" placeholder="Task Name">
 
-              <button type="submit" class="btn btn-primary">Add</button>
-            </form>
-          </div>
-        </div>
+        @include('tasks._create')
+
       </div>
     </div>
 
