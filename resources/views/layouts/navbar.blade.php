@@ -37,7 +37,12 @@
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li>
+                <form action="{{ route('logout') }}" method="post">
+                  @csrf
+                  <button type="submit" class="dropdown-item">Logout</button>
+                </form>
+              </li>
             </ul>
           </li>
         @endguest
