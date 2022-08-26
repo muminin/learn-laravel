@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -48,4 +49,16 @@ class User extends Authenticatable
   // {
   //   return 'username';
   // }
+
+  // ? Cara penulisannya adalah set[Nama Kolom]Attribute
+  public function setPasswordAttribute($password)
+  {
+    return $this->attributes['password'] = Hash::make($password);
+  }
+
+  // ? Cara penulisannya adalah get[Nama Kolom]Attribute
+  public function getNameAttribute()
+  {
+    return "{$this->name} ({$this->username})"; // Maka akan bisa dipanggil dengan $this->name;
+  }
 }
